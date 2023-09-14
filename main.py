@@ -6,7 +6,7 @@ import json
 # 获取 config 中 set city 对应的城市代码
 # 创建配置文件解析器
 config = configparser.ConfigParser()
-config.read('config.ini')  # 指定配置文件的路径
+config.read('config.ini',encoding='utf-16')  # 指定配置文件的路径
 
 # 从配置文件中获取值
 city = config.get('set','city')
@@ -20,7 +20,7 @@ psw = config.get('yagmail','psw')
 file_name = f"{cityCode}"
 
 # 使用 json.load() 从文件加载字典
-with open(file_name, "r") as file:
+with open(file_name, "r",encoding='utf-16') as file:
     loaded_city_data = json.load(file)
 
 city_code = loaded_city_data[city]
